@@ -4,7 +4,7 @@
   "description": "blank: An Ionic project",
   "scripts": {
     "page:clean": "rimraf _page",
-    "page:publish": "npm run page:clean && mkdir -p _page && cp -R www _page && cd _page && git init && git commit --allow-empty -m 'update page' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update page' && git push https://SeaFalcon@github.com/SeaFalcon/lol-match-history-search.git gh-pages --force"
+    "page:publish": "npm run page:clean && mkdir -p _page && cp -R www/* _page && cd _page && git init && git commit --allow-empty -m 'update page' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update page' && git push https://github.com/SeaFalcon/lol-match-history-search.git gh-pages --force"
   },
   "dependencies": {
     "gulp": "^3.5.6",
