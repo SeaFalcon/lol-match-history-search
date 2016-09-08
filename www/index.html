@@ -33,7 +33,7 @@
       <ion-content>
         <h1 style="text-align: center; padding-top:10px;">롤 전적 검색</h1>
         <div class="" style="text-align: center; padding-top:10px;">
-          <input type="text" placeholder="소환사명" ng-model="summonerName" style="background: antiquewhite; display: -webkit-inline-box;">
+          <input type="text" placeholder="소환사명" ng-model="summonerName" style="background: antiquewhite; display: -webkit-inline-box;" ng-keypress="$event.which===13?loadUserId(summonerName):0">
           <input type="button" value="검색" class="button button-small" ng-click="loadUserId(summonerName)">
         </div>
         <div class="" ng-if="summonerInfo != null && status == 200" style="margin-top: 10px;">
