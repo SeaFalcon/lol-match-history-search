@@ -1,4 +1,4 @@
-# Leagu Of Legends Match History Search Engine
+# League Of Legends Match History Search Engine
 
 Search Engine for League of Legneds Match History.
 
@@ -8,4 +8,4 @@ ionic
 
 ## Preview
 
-http://SeaFalcon.github.io/lol-match-history-search
+https://github.com/SeaFalcon/lol-match-history-search
