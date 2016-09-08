@@ -8,4 +8,4 @@ ionic
 
 ## Preview
 
-https://github.com/SeaFalcon/lol-match-history-search
+https://seafalcon.github.io/lol-match-history-search
