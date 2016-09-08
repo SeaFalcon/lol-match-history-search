@@ -1,4 +1,4 @@
-"proxies":[
+/*"proxies":[
 	{
 		"path": "/static-data",
 		"proxyUrl": "https://global.api.pvp.net/api/lol/static-data"
@@ -8,7 +8,7 @@
 		"proxyUrl": "https://kr.api.pvp.net/api"
 	}
 
-]
+]*/
 
 angular.module('riot.controllers', [])
 

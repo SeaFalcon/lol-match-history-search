@@ -1,4 +1,15 @@
 {
   "name": "blank",
-  "app_id": ""  
+  "app_id": "",
+  "proxies":[
+  	{
+  		"path": "/static-data",
+  		"proxyUrl": "https://global.api.pvp.net/api/lol/static-data"
+  	},
+  	{
+  		"path": "/api",
+  		"proxyUrl": "https://kr.api.pvp.net/api"
+  	}
+
+  ]
 }

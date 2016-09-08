@@ -16,13 +16,13 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <!--<script src="cordova.js"></script>-->
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/filter.js"></script>
-    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
   </head>
   <body ng-app="starter" ng-controller="ApiCtrl">
 
@@ -33,11 +33,11 @@
       <ion-content>
         <h1 style="text-align: center; padding-top:10px;">롤 전적 검색</h1>
         <div class="" style="text-align: center; padding-top:10px;">
-          <input type="text" id="summonerName" placeholder="소환사명" ng-model="sName" style="background: antiquewhite; display: -webkit-inline-box;">
-          <input type="button" value="검색" class="button button-small" ng-click="loadUserId(sName)">
+          <input type="text" placeholder="소환사명" ng-model="summonerName" style="background: antiquewhite; display: -webkit-inline-box;">
+          <input type="button" value="검색" class="button button-small" ng-click="loadUserId(summonerName)">
         </div>
         <div class="" ng-if="summonerInfo != null && status == 200" style="margin-top: 10px;">
-          <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/{{defaultInfo.profileIconId}}.png" width="40" />
+          <img ng-src="//ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/{{defaultInfo.profileIconId}}.png" width="40" />
           <strong style="font-size:30px;">{{defaultInfo.name}}</strong><br>
           레벨 : {{defaultInfo.summonerLevel}}<br>
           일반 : {{normalWin}} 승<br>
@@ -51,7 +51,7 @@
           그런 소환사 아이디는 존재하지 않습니다.
         </div>
         <div class="" ng-if="status == 404" style="margin-top: 10px;">
-          <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/{{defaultInfo.profileIconId}}.png" width="40" />
+          <img ng-src="//ddragon.leagueoflegends.com/cdn/6.18.1/img/profileicon/{{defaultInfo.profileIconId}}.png" width="40" />
           <strong style="font-size:30px;">{{defaultInfo.name}}</strong><br>
           레벨 : {{defaultInfo.summonerLevel}}<br>
           일반 : {{normalWin}} 승<br>
@@ -62,10 +62,10 @@
           <div ng-if="!matchSummary.win" style="background-color:#f9ebeb;">
             <strong style="color:#d75757;">{{matchSummary.win|resultFilter}} <span>({{matchSummary.matchType|typeFilter}})</span></strong>
             {{matchSummary.date|date:'MM/dd H:mm'}} | {{matchSummary.gameTime / 60 | number:0}}분<br>
-            <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="50" />
+            <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="50" />
 
             <span ng-repeat="spell in matchSummary.spells">
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="30" />
             </span>
             <br>
 
@@ -80,28 +80,28 @@
             <br>
 
             <span ng-repeat="item in matchSummary.items track by $index">
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="30" />
             </span>
             <br>
 
             <span ng-if="matchSummary.players.team100.length > matchSummary.players.team200.length">
               <span ng-repeat="myTeam in matchSummary.players.team100">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
               </span>
               <strong>vs</strong>
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
               <span ng-repeat="enemy in matchSummary.players.team200">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
               </span>
             </span>
             <span ng-if="matchSummary.players.team100.length < matchSummary.players.team200.length">
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
               <span ng-repeat="myTeam in matchSummary.players.team100">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
               </span>
               <strong>vs</strong>
               <span ng-repeat="enemy in matchSummary.players.team200">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
               </span>
             </span>
             <i style="cursor: pointer;" class="ion-arrow-down-b" ng-click="showDetail(matchSummary, $index)"></i>
@@ -110,7 +110,7 @@
 
               {{gameDetailInfo.teams[0].winner|resultFilter}}팀<br>
               <span ng-if="matchSummary.teamId == 100">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
                 <b>{{defaultInfo.name}}</b>
                 |
                 <span ng-if="summonerInfo.tier">{{summonerInfo.tier}} {{summonerInfo.entries[0].division}}</span>
@@ -120,13 +120,13 @@
                 ( {{matchSummary.kill}} / {{matchSummary.death}} / {{matchSummary.assist}} )
                 |
                 <span ng-repeat="spell in matchSummary.spells">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="30" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="30" />
                 </span>
                 |
                 lv: {{matchSummary.lv}}
                 <br>
                 <span ng-repeat="item in matchSummary.items track by $index">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                 </span>
                 |
                 골드 {{matchSummary.gold}} / CS {{matchSummary.cs}} (분당 {{matchSummary.cs / (matchSummary.gameTime/60) | number:1 }})
@@ -135,7 +135,7 @@
               </span>
               <div ng-repeat="player in matchSummary.fellowPlayers">
                 <div ng-if="player.teamId == 100">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
                   <b>{{player.name}}</b>
                   |
                   <span ng-if="player.tier">{{player.tier}}</span>
@@ -144,13 +144,13 @@
                   <span style="color: #d75757;">{{ (player.kill + player.assist) / player.death | number:2 }}</span>
                   ( {{player.kill}} / {{player.death}} / {{player.assist}} )
                   |
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
                   |
                   lv: {{player.lv}}
                   <br>
                   <span ng-repeat="item in player.items track by $index">
-                    <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                    <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                   </span>
                   |
                   골드 {{player.gold}} | CS {{player.cs}} (분당 {{player.cs/(matchSummary.gameTime/60) | number:1}} )
@@ -164,7 +164,7 @@
 
               {{gameDetailInfo.teams[1].winner|resultFilter}}팀<br>
               <span ng-if="matchSummary.teamId == 200">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
                 <b>{{defaultInfo.name}}</b>
                 |
                 <span ng-if="summonerInfo.tier">{{summonerInfo.tier}} {{summonerInfo.entries[0].division}}</span>
@@ -174,13 +174,13 @@
                 ( {{matchSummary.kill}} / {{matchSummary.death}} / {{matchSummary.assist}} )
                 |
                 <span ng-repeat="spell in matchSummary.spells">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="20" />
                 </span>
                 |
                 lv: {{matchSummary.lv}}
                 <br>
                 <span ng-repeat="item in matchSummary.items track by $index">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                 </span>
                 |
                 골드 {{matchSummary.gold}} / CS {{matchSummary.cs}} (분당 {{matchSummary.cs / (matchSummary.gameTime/60) | number:1 }})
@@ -189,7 +189,7 @@
               </span>
               <div ng-repeat="player in matchSummary.fellowPlayers">
                 <div ng-if="player.teamId == 200">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
                   <b>{{player.name}}</b>
                   |
                   <span ng-if="player.tier">{{player.tier}}</span>
@@ -198,13 +198,13 @@
                   <span style="color: #d75757;">{{ (player.kill + player.assist) / player.death | number:2 }}</span>
                   ( {{player.kill}} / {{player.death}} / {{player.assist}} )
                   |
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
                   |
                   lv: {{player.lv}}
                   <br>
                   <span ng-repeat="item in player.items track by $index">
-                    <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                    <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                   </span>
                   |
                   골드 {{player.gold}} | CS {{player.cs}} (분당 {{player.cs/(matchSummary.gameTime/60) | number:1}} )
@@ -220,10 +220,10 @@
           <div ng-if="matchSummary.win" style="background-color:#e4f0f3;">
             <strong style="color: #1e869e;">{{matchSummary.win|resultFilter}} <span>({{matchSummary.matchType|typeFilter}})</span></strong>
             {{matchSummary.date|date:'MM/dd H:mm'}} | {{matchSummary.gameTime / 60 | number:0}}분<br>
-            <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="50" />
+            <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="50" />
 
             <span ng-repeat="spell in matchSummary.spells">
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="30" />
             </span>
             <br>
 
@@ -238,28 +238,28 @@
             <br>
 
             <span ng-repeat="item in matchSummary.items track by $index">
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="30" />
             </span>
             <br>
 
             <span ng-if="matchSummary.players.team100.length == 5">
               <span ng-repeat="myTeam in matchSummary.players.team100">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
               </span>
               <strong>vs</strong>
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
               <span ng-repeat="enemy in matchSummary.players.team200">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
               </span>
             </span>
             <span ng-if="matchSummary.players.team100.length == 4">
-              <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+              <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
               <span ng-repeat="myTeam in matchSummary.players.team100">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{myTeam}}.png" width="30" />
               </span>
               <strong>vs</strong>
               <span ng-repeat="enemy in matchSummary.players.team200">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{enemy}}.png" width="30" />
               </span>
             </span>
             <i class="ion-arrow-down-b" ng-click="showDetail(matchSummary, $index)"></i>
@@ -268,7 +268,7 @@
 
               {{gameDetailInfo.teams[0].winner|resultFilter}}팀<br>
               <span ng-if="matchSummary.teamId == 100">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="20" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="20" />
                 <b>{{defaultInfo.name}}</b>
                 |
                 <span ng-if="summonerInfo.tier">{{summonerInfo.tier}} {{summonerInfo.entries[0].division}}</span>
@@ -278,13 +278,13 @@
                 ( {{matchSummary.kill}} / {{matchSummary.death}} / {{matchSummary.assist}} )
                 |
                 <span ng-repeat="spell in matchSummary.spells">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="20" />
                 </span>
                 |
                 lv: {{matchSummary.lv}}
                 <br>
                 <span ng-repeat="item in matchSummary.items track by $index">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                 </span>
                 |
                 골드 {{matchSummary.gold}} / CS {{matchSummary.cs}} (분당 {{matchSummary.cs / (matchSummary.gameTime/60) | number:1 }})
@@ -293,7 +293,7 @@
               </span>
               <div ng-repeat="player in matchSummary.fellowPlayers">
                 <div ng-if="player.teamId == 100">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
                   <b>{{player.name}}</b>
                   |
                   <span ng-if="player.tier">{{player.tier}}</span>
@@ -302,13 +302,13 @@
                   <span style="color: #d75757;">{{ (player.kill + player.assist) / player.death | number:2 }}</span>
                   ( {{player.kill}} / {{player.death}} / {{player.assist}} )
                   |
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
                   |
                   lv: {{player.lv}}
                   <br>
                   <span ng-repeat="item in player.items track by $index">
-                    <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                    <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                   </span>
                   |
                   골드 {{player.gold}} | CS {{player.cs}} (분당 {{player.cs/(matchSummary.gameTime/60) | number:1}} )
@@ -322,7 +322,7 @@
 
               {{gameDetailInfo.teams[1].winner|resultFilter}}팀<br>
               <span ng-if="matchSummary.teamId == 200">
-                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
+                <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{matchSummary.myChamp}}.png" width="30" />
                 <b>{{defaultInfo.name}}</b>
                 |
                 <span ng-if="summonerInfo.tier">{{summonerInfo.tier}} {{summonerInfo.entries[0].division}}</span>
@@ -332,13 +332,13 @@
                 ( {{matchSummary.kill}} / {{matchSummary.death}} / {{matchSummary.assist}} )
                 |
                 <span ng-repeat="spell in matchSummary.spells">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{spell}}.png" width="20" />
                 </span>
                 |
                 lv: {{matchSummary.lv}}
                 <br>
                 <span ng-repeat="item in matchSummary.items track by $index">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                 </span>
                 |
                 골드 {{matchSummary.gold}} / CS {{matchSummary.cs}} (분당 {{matchSummary.cs / (matchSummary.gameTime/60) | number:1 }})
@@ -348,7 +348,7 @@
               </span>
               <div ng-repeat="player in matchSummary.fellowPlayers">
                 <div ng-if="player.teamId == 200">
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/champion/{{player.championName}}.png" width="30" />
                   <b>{{player.name}}</b>
                   |
                   <span ng-if="player.tier">{{player.tier}}</span>
@@ -357,13 +357,13 @@
                   <span style="color: #d75757;">{{ (player.kill + player.assist) / player.death | number:2 }}</span>
                   ( {{player.kill}} / {{player.death}} / {{player.assist}} )
                   |
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
-                  <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell1}}.png" width="20" />
+                  <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/spell/{{player.spell2}}.png" width="20" />
                   |
                   lv: {{player.lv}}
                   <br>
                   <span ng-repeat="item in player.items track by $index">
-                    <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
+                    <img ng-src="//ddragon.leagueoflegends.com/cdn/6.17.1/img/item/{{item}}.png" width="20" />
                   </span>
                   |
                   골드 {{player.gold}} | CS {{player.cs}} (분당 {{player.cs/(matchSummary.gameTime/60) | number:1}} )
